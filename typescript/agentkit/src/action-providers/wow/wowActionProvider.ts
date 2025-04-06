@@ -51,7 +51,8 @@ Important notes:
 - Minimum purchase amount is 100000000000000 wei (0.0000001 ETH)
 - Only supported on the following networks:
   - Base Sepolia (ie, 'base-sepolia')
-  - Base Mainnet (ie, 'base', 'base-mainnet')`,
+  - Base Mainnet (ie, 'base', 'base-mainnet')
+  - Hashkey Mainnet (ie, 'hashkey-mainnet')`,
     schema: WowBuyTokenInput,
   })
   async buyToken(
