@@ -233,6 +233,7 @@ Important notes:
    * @returns True if the Wow action provider supports the network, false otherwise.
    */
   supportsNetwork = (network: Network) =>
+    // @ts-ignore
     network.protocolFamily === "evm" && SUPPORTED_NETWORKS.includes(network.networkId!);
 }
 

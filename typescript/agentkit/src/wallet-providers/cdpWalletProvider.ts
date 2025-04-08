@@ -168,7 +168,9 @@ export class CdpWalletProvider extends EvmWalletProvider {
         wallet = await Wallet.import(walletData);
         networkId = wallet.getNetworkId();
       } else if (mnemonicPhrase) {
-        wallet = await Wallet.import({ mnemonicPhrase: mnemonicPhrase }, networkId);
+        // 这里先写死 因为 evm 的地址是一样的 后面需要修改 ！！！
+        // 可鞥是因为 Wallet.import 第二个参数 需要支持 hashkey 
+        wallet = await Wallet.import({ mnemonicPhrase: mnemonicPhrase }, 'base-sepolia');
       } else {
         wallet = await Wallet.create({ networkId: networkId });
       }

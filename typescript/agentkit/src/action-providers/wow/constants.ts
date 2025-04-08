@@ -1,6 +1,6 @@
 import type { Abi } from "abitype";
 
-export const SUPPORTED_NETWORKS = ["base-mainnet", "base-sepolia"];
+export const SUPPORTED_NETWORKS = ["base-mainnet", "base-sepolia", "hashkey-mainnet", "hashkey-testnet"] as const;
 
 export const WOW_FACTORY_ABI: Abi = [
   {
@@ -802,9 +802,15 @@ export const WOW_ABI: Abi = [
   { stateMutability: "payable", type: "receive" },
 ] as const;
 
+// 这里好像他妈的屌用
+// 害我研究好半天
 export const WOW_FACTORY_CONTRACT_ADDRESSES: Record<string, string> = {
   "base-sepolia": "0x04870e22fa217Cb16aa00501D7D5253B8838C1eA",
   "base-mainnet": "0x997020E5F59cCB79C74D527Be492Cc610CB9fA2B",
+  // 添加 hashkey 和 hashkey-testnet 的地址
+  "hashkey-mainnet": "",
+  // ??? 应该填哪个
+  "hashkey-testnet": "0x0f6e9b29bd1BDAE2b442e314366E5C10088E541f",
 };
 
 export const ADDRESSES: Record<string, Record<string, string>> = {
@@ -818,14 +824,26 @@ export const ADDRESSES: Record<string, Record<string, string>> = {
     WETH: "0x4200000000000000000000000000000000000006",
     UniswapQuoter: "0xC5290058841028F1614F3A6F0F5816cAd0df5E27",
   },
-  "base-mainnet": {
-    WowFactory: "0xA06262157905913f855573f53AD48DE2D4ba1F4A",
-    WowFactoryImpl: "0xe4c17055048aEe01D0d122804816fEe5E6ac4A67",
-    Wow: "0x293997C6a1f2A1cA3aB971f548c4D95585E46282",
+  // "base-mainnet": {
+  //   WowFactory: "0xA06262157905913f855573f53AD48DE2D4ba1F4A",
+  //   WowFactoryImpl: "0xe4c17055048aEe01D0d122804816fEe5E6ac4A67",
+  //   Wow: "0x293997C6a1f2A1cA3aB971f548c4D95585E46282",
+  //   BondingCurve: "0x264ece5D58A576cc775B719bf182F2946076bE78",
+  //   NonfungiblePositionManager: "0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1",
+  //   SwapRouter02: "0x2626664c2603336E57B271c5C0b26F421741e481",
+  //   WETH: "0x4200000000000000000000000000000000000006",
+  //   UniswapQuoter: "0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a",
+  // },
+  // hashkey
+  "hashkey-testnet": {
+    WowFactory: "0x0f6e9b29bd1BDAE2b442e314366E5C10088E541f",
+    WowFactoryImpl: "0xC8D37e8B30Ceab4F267e26d402fc5DFD6130baD4",
+    Wow: "0x0f6e9b29bd1BDAE2b442e314366E5C10088E541f",
+    // 下面都还没实现！！！！！！
     BondingCurve: "0x264ece5D58A576cc775B719bf182F2946076bE78",
     NonfungiblePositionManager: "0x03a520b32C04BF3bEEf7BEb72E919cf822Ed34f1",
     SwapRouter02: "0x2626664c2603336E57B271c5C0b26F421741e481",
-    WETH: "0x4200000000000000000000000000000000000006",
+    WETH: "0x41a0bD84E65e75Bc30AFBbe6ea142eBBcc347542",
     UniswapQuoter: "0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a",
   },
 };

@@ -3,7 +3,11 @@
   "compilerOptions": {
     "preserveSymlinks": true,
     "outDir": "./dist",
-    "rootDir": "."
+    "rootDir": ".",
+    "paths": {
+      "@coinbase/agentkit": ["../../agentkit/src"],
+      "@coinbase/agentkit-langchain": ["../../framework-extensions/langchain/src"]
+    }
   },
   "include": ["*.ts"]
 }
